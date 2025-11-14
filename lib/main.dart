@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'pages/separate_list_view.dart';
 
 void main() => runApp(const MyApp());
 
@@ -23,7 +24,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Custom Fonts')),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -45,6 +46,21 @@ class MyHomePage extends StatelessWidget {
                 fontWeight: FontWeight.w900
               ),
             ),
+
+        
+            const SizedBox(height: 30),
+            // TOMBOL KE LIST VIEW
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SeparateListView(),
+                  ),
+                );
+              },
+              child: const Text("Pergi ke List View"),
+            )
           ],
         ),
       ),
